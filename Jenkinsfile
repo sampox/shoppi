@@ -18,7 +18,7 @@ environment {
 		//	}
 	sh '/usr/local/bin/docker-compose build'
         sh '/usr/local/bin/docker-compose up -d'
-	sh 'docker tag shoppijob_web:latest sampofi/shoppijob_web:latest && docker tag mysql:latest sampofi/mysql:latest'
+	sh 'docker tag shoppijob_web:latest sampofi/shoppijob_web:latest'
 
 		}
     stage('Login') {
@@ -30,7 +30,7 @@ environment {
   stage('Push') {
 
 //			steps {
-				sh 'docker push sampofi/shoppijob:latest'
+				sh 'docker push sampofi/shoppijob_web:latest'
 //			}
 		}
 
