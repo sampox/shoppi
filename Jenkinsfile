@@ -30,7 +30,7 @@ environment {
   stage('Push') {
 
 //			steps {
-				sh '/usr/local/bin/docker push sampofi/shoppijob:latest'
+				sh 'docker push sampofi/shoppijob:latest'
 //			}
 		}
 
