@@ -15,6 +15,8 @@ environment {
 		//	steps {
 		//		sh 'docker build -t sampofi/phpmysql:latest .'
 		//	}
+	sh 'whoami'
+	sh 'printenv'
 	sh 'docker-compose build'
         sh 'docker-compose up -d'
 		}
