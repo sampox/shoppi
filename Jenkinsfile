@@ -12,20 +12,20 @@ environment {
     
     stage('Build') {
 
-			steps {
+		//	steps {
 				sh 'docker build -t sampofi/phpmysql:latest .'
-			}
+		//	}
 		}
     stage('Login') {
-	steps {
+	//steps {
 		sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-	}
+//	}
     }
   stage('Push') {
 
-			steps {
+//			steps {
 				sh 'docker push sampofi/phpmysql:latest'
-			}
+//			}
 		}
 
 	post {
