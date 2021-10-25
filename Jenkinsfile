@@ -4,7 +4,9 @@ node{
 //              DOCKERHUB_CREDENTIAL=credentials('dockerhub-cred-sampofi')                
 //		withCredentials([string(credentialsId: 'dockerhub-cred-sampofi', variable: 'SECRET')])	
 //}
-
+withCredentials([string(credentialsId: 'dockerhub-cred-sampofi', variable: 'SERET')]) { //set SECRET with the credential content
+        echo "My secret text is '${SERET}'"
+    }
 
     stage('SCM Checkout')
     {
