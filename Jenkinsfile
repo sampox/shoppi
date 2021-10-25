@@ -23,7 +23,7 @@ environment {
 		}
     stage('Login') {
 	//steps {
-//		sh 'echo $DOCKERHUB_CREDENTIAL_PSW | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
+		sh 'echo $DOCKERHUB_CREDENTIAL_PSW | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
 //	}
 		
     }
