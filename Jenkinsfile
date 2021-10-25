@@ -28,7 +28,7 @@ environment {
   stage('Push') {
 
 //			steps {
-				sh 'docker push sampofi/shoppijob'
+				sh 'docker-compose push sampofi/shoppijob'
 //			}
 		}
 
