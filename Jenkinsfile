@@ -1,8 +1,10 @@
 node{
 
 environment {
-		DOCKERHUB_CREDENTIAL=credentials('dockerhub-cred-sampofi')                
-	}
+	//	DOCKERHUB_CREDENTIAL=credentials('dockerhub-cred-sampofi')                
+		withCredentials([string(credentialsId: 'dockerhub-cred-sampofi', variable: 'SECRET')])
+                echo "secret text is '${SECRET}'"	
+}
 
 
     stage('SCM Checkout')
@@ -20,8 +22,9 @@ environment {
 		}
     stage('Login') {
 	//steps {
-		sh 'echo $DOCKERHUB_CREDENTIAL_PSW | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
+//		sh 'echo $DOCKERHUB_CREDENTIAL_PSW | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
 //	}
+		
     }
   stage('Push') {
 
