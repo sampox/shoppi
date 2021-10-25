@@ -4,7 +4,7 @@ environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-sampofi')
 	}
 
-stages {
+
     stage('SCM Checkout')
     {
         git credentialsId: 'dcbdfb03-7055-4f98-8e26-077f117c0e5e', url: 'https://github.com/sampox/shoppi.git'
@@ -27,7 +27,7 @@ stages {
 				sh 'docker push sampofi/phpmysql:latest'
 			}
 		}
-}
+
 	post {
 		always {
 			sh 'docker logout'
