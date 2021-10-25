@@ -22,7 +22,7 @@ environment {
 		}
     stage('Login') {
 	//steps {
-		sh 'echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin'
+		sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
 //	}
     }
   stage('Push') {
