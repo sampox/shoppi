@@ -29,7 +29,7 @@ environment {
   stage('Push') {
 
 //			steps {
-				sh 'docker push sampofi/phpmysql:latest'
+				sh 'docker push sampofi/shoppijob_web:latest'
 //			}
 		}
 
