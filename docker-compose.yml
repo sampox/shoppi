@@ -1,5 +1,16 @@
 version: '3.3'
 services:
+  jenkins:
+  container_name: jenkins
+  build: "jenkins/"
+  ports:
+    - "8080:8080"
+  environment:
+    - JAVA_OPTS:-Djava.awt.headless=true
+  volumes:
+    - /var/jenkins_home
+    - /var/run/docker.sock:/var/run/docker.sock
+  
   web:
        build:
                context: ./php/online-shopping-system
@@ -18,6 +29,7 @@ services:
           restart: always  
           volumes:
              - ./php/online-shopping-system/database/onlineshop.sql:/docker-entrypoint-initdb.d/onlineshop.sql
+       
           environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: database
