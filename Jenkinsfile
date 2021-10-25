@@ -15,8 +15,8 @@ environment {
 		//	steps {
 		//		sh 'docker build -t sampofi/phpmysql:latest .'
 		//	}
-sh 'sudo docker-compose build'
-        sh 'sudo docker-compose up -d'
+	sh 'docker-compose build'
+        sh 'docker-compose up -d'
 		}
     stage('Login') {
 	//steps {
