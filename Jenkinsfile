@@ -24,8 +24,8 @@ environment {
     stage('Login') {
 	
 //		sh 'echo $DOCKERHUB_CREDENTIAL_PSW | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
-	        sh 'echo ${SECRET} | docker login -u sampofi --password-stdin'
-		
+//	        sh 'echo ${SECRET} | docker login -u sampofi --password-stdin'
+		sh 'docker login -u sampofi -p ${SECRET}'		
     }
   stage('Push') {
 
