@@ -18,6 +18,8 @@ environment {
 		//	}
 	sh '/usr/local/bin/docker-compose build'
         sh '/usr/local/bin/docker-compose up -d'
+	sh 'docker tag shoppijob_web:latest $DOCKERHUB_CREDENTIAL_USR/shoppijob_web:latest && docker tag mysql:latest $DOCKERHUB_CREDENTIAL_USR/mysql:latest'
+
 		}
     stage('Login') {
 	//steps {
@@ -28,7 +30,7 @@ environment {
   stage('Push') {
 
 //			steps {
-				sh '/usr/local/bin/docker-compose push sampofi/shoppijob'
+				sh '/usr/local/bin/docker push $DOCKERHUB_CREDENTIAL_USR/shoppijob'
 //			}
 		}
 
