@@ -25,7 +25,6 @@ environment {
 				sh 'docker push sampofi/phpmysql:latest'
 			}
 		}
-	}
 
 	post {
 		always {
