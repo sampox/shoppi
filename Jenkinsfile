@@ -1,9 +1,7 @@
 node{
 
 environment {
-	//	DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-sampofi')
-         USERNAME = credentials('DOCKER_USERNAME')
-         PASSWORD = credentials('DOCKER_PASSWORD')                
+		DOCKERHUB_CREDENTIAL=credentials('dockerhub-cred-sampofi')                
 	}
 
 
@@ -22,7 +20,7 @@ environment {
 		}
     stage('Login') {
 	//steps {
-		sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
+		sh 'echo $DOCKERHUB_CREDENTIAL_PSW | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
 //	}
     }
   stage('Push') {
