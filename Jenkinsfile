@@ -13,8 +13,10 @@ environment {
     stage('Build') {
 
 		//	steps {
-				sh 'docker build -t sampofi/phpmysql:latest .'
+		//		sh 'docker build -t sampofi/phpmysql:latest .'
 		//	}
+sh 'sudo docker-compose build'
+        sh 'sudo docker-compose up -d'
 		}
     stage('Login') {
 	//steps {
