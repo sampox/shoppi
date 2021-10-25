@@ -2,8 +2,7 @@ node{
 
 environment {
 	//	DOCKERHUB_CREDENTIAL=credentials('dockerhub-cred-sampofi')                
-		withCredentials([string(credentialsId: 'dockerhub-cred-sampofi', variable: 'SECRET')])
-                echo "secret text is '${SECRET}'"	
+		withCredentials([string(credentialsId: 'dockerhub-cred-sampofi', variable: 'SECRET')])	
 }
 
 
@@ -29,7 +28,7 @@ environment {
   stage('Push') {
 
 //			steps {
-				sh 'docker push sampofi/shoppijob_web:latest'
+				sh 'docker push sampofi/shoppi'
 //			}
 		}
 
