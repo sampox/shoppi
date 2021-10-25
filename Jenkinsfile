@@ -4,8 +4,8 @@ node{
 //              DOCKERHUB_CREDENTIAL=credentials('dockerhub-cred-sampofi')                
 //		withCredentials([string(credentialsId: 'dockerhub-cred-sampofi', variable: 'SECRET')])	
 //}
-withCredentials([string(credentialsId: 'dockerhub-cred-sampofi', variable: 'SERET')]) { //set SECRET with the credential content
-        echo "My secret text is '${SERET}'"
+withCredentials([string(credentialsId: 'sekke', variable: 'SECRET')]) { //set SECRET with the credential content
+        echo "My secret text is '${SECRET}'"
     }
 
     stage('SCM Checkout')
@@ -27,8 +27,8 @@ withCredentials([string(credentialsId: 'dockerhub-cred-sampofi', variable: 'SERE
 	
 //		sh 'echo $DOCKERHUB_CREDENTIAL_PSW | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-stdin'
 //	        sh 'echo ${SECRET} | docker login -u sampofi --password-stdin'
-withCredentials([string(credentialsId: 'dockerhub-cred-sampofi', variable: 'SECRET')]){		
-sh "docker login -u sampofi -p '$SECRET'"		}
+withCredentials([string(credentialsId: 'dockerhub-cred-sampofi', variable: 'SEtCRET')]){		
+sh "docker login -u sampofi -p '$SEtCRET'"		}
     }
   stage('Push') {
 
