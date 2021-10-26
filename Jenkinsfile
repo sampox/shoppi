@@ -37,9 +37,9 @@ sh "docker login -u sampofi -p '${SECRET}'"		}
 //			}
 		}
 
-	post {
-		always {
+//	post {
+//		always {
 			sh 'docker logout'
-		}
-	}
+//		}
+//	}
 }
